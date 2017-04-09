@@ -33,7 +33,6 @@ def sp_parse_file(cfilepath):
         return table, err
     except IOError as err:
         print("Couldn't load config file, %s.\n" % err.message)
-        return None, None
     except Exception as err:
         print(err.message)
     return None, None
@@ -66,7 +65,7 @@ def sp_extract_grammar(f):
 
         # Check if statment exist and if it follows the grammar.
         if eq == -1 and not statement.isspace() and len(statement) > 0:
-            err.append("Error on line %s. Not a statement > \"%s\"" % (str(linecur), line) )
+            err.append("Error on line %s. Not a statement > \"%s\"" % (str(linecur), line))
             return None, err
 
         if eq == -1:
@@ -84,7 +83,7 @@ def sp_extract_grammar(f):
 
         # Chec if attribute is valid.
         if larg.isspace() or len(larg) == 0:
-            err.append("Error on line %s. No left argument > \"%s\"" % (str(linecur), line) )
+            err.append("Error on line %s. No left argument > \"%s\"" % (str(linecur), line))
             return None, err
 
         # Add value with key to dictionary.
