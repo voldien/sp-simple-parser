@@ -35,6 +35,10 @@ def sp_parse_file(path):
     :return: directory table and error array.
     """
 
+    # Check if parameter is valid.
+    if not path:
+        raise ValueError("file path requires to be a none null parameter.")
+
     # Load file and extract configuration syntax.
     try:
         f = open(path, 'r')
