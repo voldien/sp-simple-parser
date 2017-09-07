@@ -10,7 +10,7 @@ if "install" in sys.argv[1]:
     if lib_paths[0].startswith("/usr/lib"):
         lib_paths.append(get_python_lib(prefix="/usr/local/"))
     for path in lib_paths:
-        existing_path = os.path.abspath(os.path.join(path, "kcw"))
+        existing_path = os.path.abspath(os.path.join(path, "sp"))
         if os.path.exists(existing_path):
             break
 
